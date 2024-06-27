@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bd">
+    <style>
+
+    .bd{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    }
+
+    .prnt_con
+    {
+     width: 100%;
+/*      display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: auto;
+    overflow: hidden;
+/*     background-color: rgb(214, 214, 214); */
+    position: relative;
+    height: 50lvi;
+    }
+
+.slider_container{
+    top: 6lvi;
+    width: 50%;
+    height: 50lvi;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.img_con {
+    width: 100%;
+    height: auto;
+    transition-timing-function: ease-in-out;
+    transition: all .5s;
+}
+
+.img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition-timing-function: ease-in-out;
+    transition: all .5s;
+}
+
+
+
+/* We make position absolute here due to buttons resize position with relative */
+
+.btn{
+    background-color: white;
+    font-size: 5vmin;
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    position: relative;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    background-color: aqua;
+    transition-timing-function: ease-in-out;
+    transform: scale(1.2);
+    transition: all .5s;
+}
+
+
+.left {
+bottom: 30lvi;
+left: 15%;
+}
+
+.right {
+left: 80%;
+bottom: 30lvi;
+}
+
+    </style>
+
+<div class="prnt_con">
+    <div class="slider_container">
+    <div class="img_con">
+    <img class="img a"  src="./EmperorPenguinFeedingChick.jpg" alt="">
+    <img class="img b" src="./MsY1hp.jpg" alt="">
+    <img class="img c" src="./Snow-hill-Island_LCC-NOV22-1024x768.jpg" alt="">
+    <img class="img d" src="./6319570287_826df4f89a_b.jpg" alt="">
+    <img class="img d" src="./oneplus-11-pro.png" alt="">
+    <img class="img d" src="./S23.png" alt="">
+    <img class="img d" src="./pixel-7-pro.png" alt="">
+    <img class="img d" src="./Realme-11-Pro+.webp" alt="">
+    </div>
+    </div>
+        <button onclick="goPre()" class="btn left"> &lt </button>
+        <button onclick="goNxt()" class="btn right"> &gt </button>
+</div>
+
+<script>
+let slide = document.querySelectorAll(".img");
+let currentIndex = 0;
+let counter = 0;
+completed = false;
+
+window.onload = function() {
+    for(let s=0; s<slide.length; s++)
+    {
+        slide[s].style.left = `${s * 100}%`;   
+    }
+};
+
+function goNxt() {
+    if (currentIndex < slide.length - 1) {
+        currentIndex++;
+    }
+    run();
+}
+
+function goPre() {
+    if (currentIndex > 0) {
+        currentIndex--;
+    }
+    run();
+}
+
+
+function run() {
+    slide.forEach((img, index) => {
+       
+        img.style.transform = `translateX(-${currentIndex*100}%)`;
+        console.log("Current Index", currentIndex);
+    });
+}
+
+function autoplay(){
+if (completed == false){
+    goNxt();
+    counter++;
+    if (counter == slide.length-1){
+        completed = true;
+        counter = 0;
+    }
+}
+    else{
+        goPre();
+        counter ++;
+        if(counter == slide.length-1){
+          counter =0;
+          completed = false;
+        }
+    }
+}
+
+setInterval(autoplay,2000);
+</script>
+
+</body>
+</html>

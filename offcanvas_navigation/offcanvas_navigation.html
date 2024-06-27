@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offcanvas</title>
+</head>
+
+<body class="bd">
+
+    <div class="con">
+        <div class="nav_h">
+            <h3>Hello, There</h3>
+            <button class="convas_close_btn">X</button>
+        </div>
+        <nav class="nav">
+            <a href="#">item1</a>
+            <a href="#">item2</a>
+            <a href="#">item3</a>
+            <a href="#">item4</a>
+            <a href="#">item5</a>
+            <a href="#">item6</a>
+            <a href="#">item7</a>
+        </nav>
+    </div>
+    <button class="offcanvas_active_btn">X</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni quaerat recusandae deserunt saepe, quae laborum
+        perferendis nulla facilis pariatur quos vitae, distinctio numquam itaque quod quibusdam maiores libero?
+        Provident quos, enim doloribus illum et fuga mollitia corrupti ex. Harum veniam suscipit architecto dicta
+        tempora minus accusantium cum quibusdam, ipsum esse exercitationem dolor sunt quo iure atque natus hic illum,
+        aliquid nisi? Quos molestiae libero quam autem porro fuga maxime laborum voluptatem ut eveniet dolor nisi
+        obcaecati, impedit exercitationem non expedita reiciendis est, quis vero facere. Possimus, esse velit. Quas vero
+        dolores soluta vel, officia reprehenderit. Dolorem enim cum optio fugiat deleniti ratione neque corporis earum
+        impedit expedita libero, debitis quos consequatur architecto officiis dolore illo voluptas atque ipsa aperiam
+        maxime accusamus odit. Modi tempore ratione corporis, error illum temporibus illo nemo voluptatum a
+        necessitatibus debitis rem, minima earum! Vero ipsa quia, sint totam veritatis veniam beatae nobis. Hic sequi,
+        perferendis voluptates quidem expedita distinctio architecto molestiae voluptatibus officia esse sapiente! In
+        officia sint consequuntur quidem vero minus porro nostrum. Enim molestiae minima ipsa ea repellendus rerum
+        corporis natus, quos amet officia iure ipsum assumenda obcaecati cumque maxime nobis adipisci perspiciatis
+        error! Voluptate, fugiat hic. Incidunt asperiores aperiam at numquam velit a eveniet vel nemo dolore minima
+        quisquam vitae, voluptatum temporibus, corrupti nulla? Error, illo, sint autem iusto molestias nesciunt itaque
+        nostrum quaerat dicta atque mollitia explicabo neque voluptatibus cumque molestiae aperiam aspernatur. Sit optio
+        nam consectetur in. Molestias distinctio cum ipsa architecto aperiam amet, repudiandae soluta neque, iure
+        facilis, enim officiis sit quasi cumque natus. Aperiam adipisci ducimus facere. Vel ratione alias laborum
+        pariatur optio eius magnam minus laudantium quidem facilis minima quisquam, ea in voluptatum nesciunt magni.
+        Quos ut pariatur fugit quo accusantium ad sed hic quam voluptate eaque facilis, id natus. Esse dolorum at natus
+        autem modi impedit adipisci dolor magnam, enim explicabo quidem facere consectetur dolorem, alias soluta,
+        perspiciatis aspernatur temporibus odio itaque labore in sed perferendis! Blanditiis molestias repellendus optio
+        consequatur quibusdam culpa officia molestiae distinctio, facere quaerat! Dolorum praesentium rem deserunt quos
+        mollitia quis magni inventore assumenda dolor commodi harum adipisci ea non, nihil, alias quo, deleniti odio
+        tempore. Culpa, exercitationem? Aliquid, quis! Sapiente, numquam error totam provident in libero ex, unde modi
+        voluptate nesciunt excepturi laudantium distinctio? Optio hic quidem unde ipsum id, quam harum neque
+        exercitationem deserunt corporis eaque dolores voluptate, quod pariatur cum quas ducimus atque adipisci aut
+        impedit. Ab assumenda sed quidem maxime magni fugit nisi maiores veniam nesciunt. Accusantium temporibus
+        eligendi laudantium expedita porro? Iusto accusamus similique labore architecto molestias deserunt sed ex
+        reprehenderit nobis quod quo reiciendis, maxime consectetur vitae sunt ipsam voluptatem voluptas eum nemo cumque
+        libero amet minus a sequi. Ex odit dignissimos et perferendis maxime saepe rerum velit hic reiciendis dicta,
+        natus veniam nobis enim, provident accusamus incidunt facilis ipsam perspiciatis molestias, iste adipisci.
+        Distinctio tempore excepturi atque necessitatibus. Eligendi sit eveniet reiciendis nihil in cum itaque facere
+        dignissimos ea. Pariatur dolorum facilis nihil vero optio. Deleniti illo cupiditate odit culpa maiores quos
+        minima alias explicabo?</p>
+
+    <style>
+        .bd {
+            color: rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.549);
+            margin: 0;
+        }
+
+        .offcanvas_active_btn {
+            position: relative;
+            left: 1%;
+            top: 1vmin;
+            outline: none;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 4vmin;
+            border-radius: 20px;
+            padding: 0vmin 5vmin;
+            background-color: rgb(46, 46, 46);
+            color: white;
+            border: none;
+        }
+
+        .offcanvas_active_btn:hover {
+            background-color: rgb(0, 217, 217);
+            transition-timing-function: ease-in;
+            transition: all .3s;
+        }
+
+
+        .offcanvas_active_btn:active {
+            transform: scale(1.1);
+            transition-timing-function: ease-in;
+            transition: all .3s;
+        }
+
+        .con {
+            z-index: 9;
+            width: 30%;
+            height: 100vh;
+            background-color: rgb(50, 210, 101);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: none;
+            border-radius: 2vmin;
+            flex-wrap: wrap;
+            position: fixed;
+            left: -70%;
+            transition-timing-function: linear;
+            transition: left .5s;
+        }
+
+        .con.active {
+            left: 0;
+            transition-timing-function: linear;
+            transition: left .5s;
+        }
+
+        .nav_h {
+            font-size: 2.5vmin;
+            display: flex;
+            gap: 3vmin;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(55, 55, 55);
+            font-family: sans-serif;
+            padding: 0 5%;
+        }
+
+        .nav {
+            /* background-color: darkorange; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: none;
+            border-radius: 2vmin;
+        }
+
+        .nav a {
+            padding: 3vmin 4vmin;
+            border: none;
+            outline: none;
+            color: rgb(255, 255, 255);
+            border: none;
+            font-size: 3vmin;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 2vmin;
+        }
+
+        .nav a:hover {
+            background-color: rgb(253, 253, 253);
+            color: rgb(50, 210, 101);
+            transition: all .3s;
+        }
+
+        .convas_close_btn {
+            outline: none;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 10vmin;
+            font-size: 4vmin;
+        }
+
+        .convas_close_btn:hover {
+
+            color: rgb(50, 210, 101);
+            background-color: white;
+            transform: scale(1.1);
+            transition-timing-function: ease-in;
+            transition: all .5s;
+        }
+
+        @media (max-width: 768px) {
+            .con {
+                width: 70%;
+            }
+        }
+
+
+        @media (min-width: 769px) {
+            .con {
+                width: 25%;
+            }
+        }
+    </style>
+
+    <script>
+        let btn = document.querySelector(".offcanvas_active_btn");
+        let close_btn = document.querySelector(".convas_close_btn");
+        let convas = document.querySelector(".con");
+
+        btn.addEventListener("click", () => {
+            convas.classList.toggle("active");
+        });
+
+        close_btn.addEventListener("click", () => {
+            convas.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>

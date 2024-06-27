@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="bd">
+    <div class="con">
+
+        <div class="drop_down">
+            <button class="drop_down_btn">Fruit List <span class="arrow"></span></button>
+            <ul class="fruits">
+                <a href="#">
+                    <li class="items">Apple</li>
+                </a>
+                <a href="#">
+                    <li class="items">Banana</li>
+                </a>
+                <a href="#">
+                    <li class="items">oranges</li>
+                </a>
+                <a href="#">
+                    <li class="items">Mango</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="drop_down">
+            <button class="drop_down_btn">Fruit List <span class="arrow"></span></button>
+            <ul class="fruits">
+                <a href="#">
+                    <li class="items">Apple</li>
+                </a>
+                <a href="#">
+                    <li class="items">Banana</li>
+                </a>
+                <a href="#">
+                    <li class="items">oranges</li>
+                </a>
+                <a href="#">
+                    <li class="items">Mango</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="drop_down">
+            <button class="drop_down_btn">Fruit List <span class="arrow"></span></button>
+            <ul class="fruits">
+                <a href="https://www.apple.com">
+                    <li class="items">Apple</li>
+                </a>
+                <a href="#">
+                    <li class="items">Banana</li>
+                </a>
+                <a href="#">
+                    <li class="items">oranges</li>
+                </a>
+                <a href="#">
+                    <li class="items">Mango</li>
+                </a>
+            </ul>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum reprehenderit temporibus vel aut harum excepturi provident ipsa vitae maxime esse hic non quod possimus, mollitia dolor quas aliquid! Aut quibusdam, quis repellat necessitatibus impedit perspiciatis. Vero earum corporis voluptas reiciendis commodi cumque quod eius dicta quasi in pariatur facilis minima provident aliquam harum quidem illum minus vel, necessitatibus aspernatur, placeat distinctio, maxime modi expedita. Porro voluptates accusantium beatae. Suscipit vero a temporibus veniam, libero, autem optio consequuntur recusandae distinctio possimus ab expedita quae tempora placeat enim. Voluptatum quae quaerat aut necessitatibus quo. Accusamus placeat praesentium quia. Cupiditate ratione pariatur aut quam fugit deserunt esse magni accusantium autem nemo officia totam, enim quasi nulla excepturi doloribus facilis! Nulla repellat amet laudantium animi asperiores. Eum eveniet ab tenetur id, est atque nesciunt accusantium iure inventore quos. Voluptatibus voluptatum illo sequi similique omnis ab fugiat, tempore quisquam natus eius quia dignissimos iusto quae sunt ad. Eligendi sint cum neque perferendis aut in fuga, unde fugit iure quas sequi error labore saepe, ex est quidem debitis mollitia incidunt quaerat illum doloremque doloribus ut molestiae autem? Molestiae nemo at repellendus expedita accusantium, illo, asperiores molestias vel cumque eos distinctio nobis est perspiciatis quisquam beatae impedit.</p>
+
+    </div>
+
+    <style>
+        .bd {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .con {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+
+        }
+
+        .drop_down {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 25%;
+            cursor: pointer;
+            outline: none;
+
+        }
+
+        .drop_down_btn {
+            outline: none;
+            width: 20vmin;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3vmin;
+            font-weight: bolder;
+            border-radius: 20vmin;
+            padding: 12px;
+            background-color: rgb(46, 46, 46);
+            color: white;
+            border: none;
+
+        }
+
+        .drop_down_btn:hover {
+            outline: none;
+            background-color: royalblue;
+            transform: scale(1.1);
+            transition: all .5s;
+        }
+
+        .arrow {
+            display: inline-block;
+            position: relative;
+            border-top: 5px solid;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            transition: transform .3s;
+            bottom: .5vmin;
+        }
+
+        .arrow.active {
+            transform: rotate(.5turn);
+        }
+
+        .fruits {
+            position: relative;
+            right: 3vmin;
+            font-size: 3vmin;
+            opacity: 0;
+            transition-timing-function: ease-in-out;
+            transition: opacity .5s;
+        }
+
+        .fruits.active {
+            opacity: 1;
+        }
+
+        .fruits a{
+            text-decoration: none;
+        }
+
+        .items{
+            color: white;
+            list-style: none;
+            padding: 1vmin;
+        }
+
+        .items:hover {
+            background-color: rgb(168, 139, 104);
+            border-radius: 5%;
+            transition-timing-function: ease-in-out;
+            transition: all .3s;
+        }
+    </style>
+
+    <script>
+        let buttons = document.querySelectorAll(".drop_down_btn");
+
+        buttons.forEach(free_var => {
+
+            free_var.addEventListener("click", function () {
+                let content = free_var.nextElementSibling;
+                let arrow = free_var.querySelector(".arrow");
+                arrow.classList.toggle("active");
+                content.classList.toggle("active");
+
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+
+<body class="bd">
+    <style>
+        .bd {
+            background: #780206;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #061161, #780206);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #061161, #780206);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 0;
+        }
+
+        /* This Resolution is for Tablet & Mobile Size Screens */
+        @media (max-width:768px) {
+
+            .img {
+                outline: none;
+                display: flex;
+                position: absolute;
+                top: .41vmin !important;
+                right: .5vmin;
+                width: 8vmin;
+                height: 8vmin;
+                display: block;
+            }
+
+            .btn {
+                outline: none;
+                display: flex;
+                position: relative;
+                cursor: pointer;
+                top: .6vmin;
+                left: .6vmin;
+                border: none;
+                width: 9vmin;
+                height: 9vmin;
+                border-radius: 50px;
+                transition-property: transform color;
+                transition: .2s ease-in-out;
+                display: block;
+            }
+
+            .btn.rotate {
+                transform: rotate(90deg);
+            }
+
+            .btn:hover {
+                transition-timing-function: ease-in-out;
+            }
+
+
+/* Button Glowing Effect */
+
+            .btn:before {
+                content: '';
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 50px;
+            }
+
+            .btn:hover:before {
+                opacity: 1;
+            }
+
+
+
+            @keyframes glowing {
+                0% {
+                    background-position: 0 0;
+                }
+
+                50% {
+                    background-position: 400% 0;
+                }
+
+                100% {
+                    background-position: 0 0;
+                }
+            }
+
+            #nav {
+                outline: none;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: -50%;
+                z-index: 99;
+                background-color: transparent;
+                width: 40%;
+                height: 100vh;
+                margin: 10px 0px;
+                border-radius: 10px;
+                transition: left 0.5s ease-in-out;
+            }
+            
+/* End Here */
+
+            #nav.left {
+                left: 0;
+            }
+
+            #nav * {
+                flex-grow: 0;
+                flex-shrink: 1;
+                outline: none;
+            }
+
+            #nav a {
+                padding: 4vmin;
+                text-decoration: none;
+                font-size: 3.5vmin;
+                font-family: sans-serif;
+                color: rgb(255, 255, 255) !important;
+                border-radius: 10px;
+            }
+
+            #nav a:hover {
+                background-color: rgba(255, 255, 255, 0.164);
+                border-radius: 50px;
+            }
+        }
+
+        /* This Resolution is for PC Size Screens */
+        @media (min-width:769px) {
+
+            .img,
+            .btn {
+                display: none;
+            }
+
+            #nav {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                background-color: rgba(251, 0, 255, 0.215);
+                justify-content: space-around;
+            }
+
+            #nav * {
+                font-weight: bolder;
+                font-family: sans-serif;
+                margin: 1vmin;
+                padding: 2vmin;
+                font-size: 2.32vmin;
+                color: rgb(110, 255, 228);
+                text-decoration: none;
+            }
+
+            #nav a:hover {
+                background-color: rgba(255, 100, 231, 0.78);
+                border-radius: 50px;
+                transform: scale(1.1);
+                transition-property: background-color, border-color, transform;
+                transition-duration: .3s;
+                transition-timing-function: ease-in-out;
+            }
+        }
+    </style>
+
+    <!-- let say if we make a function then put its called in button like onclick=toggle() -->
+    <button class="btn"> <img class="img" src="./icons8-menu-48.png" alt=""> </button>
+    <nav>
+        <nav id="nav">
+            <a href="#">HOME</a>
+            <a href="#">TOURS</a>
+            <a href="#">ABOUT</a>
+            <a href="#">ADVANTAGES</a>
+            <a href="#">BLOG</a>
+            <a href="#">CONTACTS</a>
+        </nav>
+    </nav>
+
+
+    <script>
+        // some variables.
+        let nav = document.getElementById('nav');
+        let button = document.querySelector(".btn");
+        let left = document.querySelector(".left");
+        let rotate = document.querySelector(".rotate");
+
+        // A function.
+        function navtoggle() {
+            nav.classList.toggle("left");
+            button.classList.toggle("rotate");
+        }
+
+        // real action call by here when button is clicked.
+        button.addEventListener('click', navtoggle);
+    </script>
+
+</body>
+
+</html>

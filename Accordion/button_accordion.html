@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="bd">
+    <div class="con">
+
+        <div class="acco">
+            <button class="acco_hd">Click here</button>
+            <p class="acco_p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quos labore voluptatem hic eligendi eaque, alias nulla accusamus? Dolore ipsum nulla, consequuntur, id repellat commodi voluptates vero sapiente cum sequi delectus, neque expedita ipsa. Alias atque non modi ratione earum vel, sapiente, voluptatem corporis cum perspiciatis saepe, sequi dicta officiis!</p>
+            <hr class="line">
+        </div>
+        <div class="acco">
+            <button class="acco_hd">Click here</button>
+            <p class="acco_p">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, sed laborum repellendus
+                aliquid rem, iusto molestiae accusantium voluptatem eum facilis totam rerum.</p>
+            <hr class="line">
+        </div>
+        <div class="acco">
+            <button class="acco_hd">Click here</button>
+            <p class="acco_p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, fugit corrupti dicta dolor consequuntur quibusdam quisquam facere magni voluptas velit vitae tempora porro a, repudiandae pariatur aut alias ullam impedit maxime. Vitae corrupti explicabo fuga, commodi impedit facere recusandae accusantium optio nihil. Libero ratione eius explicabo assumenda itaque magni ducimus corporis mollitia temporibus iusto, natus, excepturi quidem consequatur sed earum suscipit perspiciatis voluptate? Fugit, dignissimos sed. Fugiat, ex blanditiis? Aspernatur explicabo voluptatibus voluptas voluptates dolorem, nulla eius temporibus quae voluptatum optio eligendi reprehenderit pariatur quidem est autem ut officiis odit corrupti rem. Quia deserunt alias illo cumque commodi ex odit?</p>
+            <hr class="line">
+        </div>
+
+
+    </div>
+
+    <style>
+        .bd {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .con {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+
+        }
+
+        .acco {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            cursor: pointer;
+            outline: none;
+
+        }
+
+        .acco_hd {
+            outline: none;
+            width: 20vmin;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3vmin;
+            font-weight: 00;
+            border-radius: 20vmin;
+            padding: 12px;
+            background-color: rgb(46, 46, 46);
+            color: white;
+            border: none;
+
+        }
+
+        .acco_hd:hover {
+            outline: none;
+            background-color: royalblue;
+            transform: scale(1.1);
+            transition: all .5s;
+        }
+
+        .acco_p {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.5vmin;
+            font-style: italic;
+            overflow: hidden;
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            margin-bottom: 0;
+            height: 0;
+            transition: height .4s ease-in-out;
+        }
+
+        .acco_p.active {
+            /* We need this class for if condition of content.classList.contains("active") */
+        }
+
+        .line{
+        display: none;
+        }
+
+    </style>
+
+    <script>
+        let buttons = document.querySelectorAll(".acco_hd");
+
+        buttons.forEach(free_var => {
+
+            free_var.addEventListener("click", function () {
+                let content = free_var.nextElementSibling;
+                let hr = free_var.nextElementSibling.nextElementSibling
+    
+                content.classList.toggle("active");
+
+                if (content.classList.contains("active")) {
+                    content.style.height = content.scrollHeight + "px";
+                    hr.style.display = "block";
+                    hr.style.width = "100%";
+                } else {
+                    content.style.height = 0;
+                    hr.style.width = 0;
+                    hr.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

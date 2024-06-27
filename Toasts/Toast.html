@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast</title>
+</head>
+
+<body class="bd">
+
+    <div class="con">
+        <div class="head">
+            <h4 class="name">Hello there.</h4>
+            <p class="smbol">X</p>
+        </div>
+        <div class="msg">
+            <p>This is a toast message for warning!</p>
+        </div>
+    </div>
+
+    <style>
+        .bd {
+            background-color: black;
+            color: white;
+        }
+
+        .con {
+            position: fixed;
+            right: 1%;
+            top: 40%;
+            max-width: 40%;
+            border: solid 1px whitesmoke;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            border-radius: 1vmin;
+            text-align: center;
+        }
+
+        .con.show {
+            right: -50%;
+            opacity: 0;
+            transition-property: right opacity;
+            transition-timing-function: ease-in-out;
+            transition: all .5s;
+        }
+
+        .head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            border-bottom: solid whitesmoke 2px;
+            background-color: rgb(237, 237, 237);
+            justify-content: space-between;
+            padding: 0 1vmin;
+            margin: 0;
+            border-radius: 1vmin;
+        }
+
+        .name {
+            font-size: 2vmin;
+            color: rgb(0, 171, 171);
+            margin: 0;
+        }
+
+        .smbol {
+            margin: 1vmin;
+            width: 3vmin;
+            color: rgb(0, 0, 0);
+            font-size: 2.5vmin;
+        }
+
+        .smbol:hover {
+            cursor: pointer;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            color: red;
+            border-radius: 1vmin;
+            transform: scale(1.2);
+            transition-timing-function: ease-in-out;
+            transition: all .3s;
+        }
+
+        .msg {
+            background-color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .msg p {
+            font-size: 2.2vmin;
+            padding: 0;
+            margin: 2vmin 0vmin;
+        }
+    </style>
+
+    <script>
+        let toast = document.querySelector(".con");
+        let closeBtn = document.querySelector(".smbol");
+
+        closeBtn.addEventListener("click", () => {
+            toast.classList.toggle("show");
+        })
+    </script>
+
+</body>
+
+</html>

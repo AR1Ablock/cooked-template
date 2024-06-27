@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+</head>
+<body>
+    <div class="cards">
+
+    <div class="con">
+        <img class="dummy" src="/Web-Development/LabProject/motorola_edge-30.png" alt="">
+ <div class="child_con">
+    <h3 class="crd_h">Dummy Name 1</h3>
+    <p class="crd_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, libero.</p>
+    <!-- This button is optional -->
+    <button class="crd_btn">X</button>
+ </div>
+    </div>
+    <div class="con">
+        <img class="dummy" src="/Web-Development/LabProject/motorola_edge-30.png" alt="">
+ <div class="child_con">
+    <h3 class="crd_h">Dummy Name 2</h3>
+    <p class="crd_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, libero.</p>
+    <!-- This button is optional -->
+    <button class="crd_btn">X</button>
+ </div>
+    </div>
+    <div class="con">
+        <img class="dummy" src="/Web-Development/LabProject/motorola_edge-30.png" alt="">
+ <div class="child_con">
+    <h3 class="crd_h">Dummy Name 3</h3>
+    <p class="crd_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, libero.</p>
+    <!-- This button is optional -->
+    <button class="crd_btn">X</button>
+ </div>
+    </div>
+    <div class="con">
+        <img class="dummy" src="/Web-Development/LabProject/motorola_edge-30.png" alt="">
+ <div class="child_con">
+    <h3 class="crd_h">Dummy Name 4</h3>
+    <p class="crd_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, libero.</p>
+    <!-- This button is optional -->
+    <button class="crd_btn">X</button>
+ </div>
+    </div>
+
+
+
+</div>
+
+    <style>
+
+.cards{
+display: flex;
+}
+
+.con{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 25%;
+    height: auto;
+    border: solid 2px rgb(215, 215, 215);
+    text-align: center;
+}
+
+.child_con{
+    background-color: whitesmoke;
+    color: rgb(28, 28, 28);
+    padding: 0 10%;
+}
+
+.dummy{
+width: 100%;
+height: auto;
+}
+
+.crd_h{
+    font-size: 3vmin;
+    margin-top: 5%;
+    margin-bottom: 4%;
+}
+.crd_p{
+    margin-top: 0;
+    font-family:sans-serif;
+    font-size: 2.4vmin;
+}
+
+.crd_btn{
+    border: none;
+    border-radius: 100%;
+}
+
+.crd_btn:hover{
+background-color: aqua;
+transition-timing-function: ease-in-out;
+transition: .5s all;
+transform: scale(1.1);
+}
+
+    </style>
+
+    <script>
+let cards = document.querySelectorAll(".con");
+
+cards.forEach(element => {
+    let btn = element.querySelector(".crd_btn");
+    console.log(btn);
+    btn.addEventListener("click", function(){
+    element.style.display = "none";
+});
+});
+
+    </script>
+</body>
+</html>

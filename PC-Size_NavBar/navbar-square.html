@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+<body class="bd">
+    <style>
+        .bd
+        {
+            background-color: black;
+        margin: 0;
+        }
+
+        @media (max-width:768px) 
+        {
+        .con
+        {
+            display: none;
+        }    
+        }
+        @media (min-width:768px)
+        {
+            .con
+        {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: #ecfc71;
+            justify-content:space-around;
+        }
+
+        .con *
+        {
+            font-weight: bolder;
+            font-family: sans-serif;
+            margin: 1vmin;
+            padding: 2vmin;
+            font-size: larger;
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+        }
+        
+        .con a:hover
+        {
+          background-color: rgb(255, 255, 255);
+          border-radius: 50px;
+          border-color: chartreuse;
+          transform: scale(1.1);
+          transition-property: background-color, border-color, transform;
+          transition-duration: .3s;
+          transition-timing-function: ease-in-out;
+        }
+        }
+    </style>
+    <nav class="con">
+     <a href="#">Home</a>
+     <a href="#">Items</a>
+     <a href="#">Stores</a>
+     <a href="#">Shops</a>
+     <a href="#">Contact</a>
+     <a href="#">About</a>
+    </nav>
+</body>
+</html>
